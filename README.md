@@ -1,5 +1,5 @@
 # Memotest
-Este es repositorio del memotest para la empresa GS1
+Este es el repositorio del memotest para la empresa GS1
 
 ## Instalación inicial
 <pre><code>npm install</code></pre>
