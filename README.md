@@ -1,5 +1,5 @@
-# gs1-memotest
-Memotest para la empresa GS1
+# Memotest
+Este es repositorio del memotest para la empresa GS1
 
 ## Instalación inicial
 npm install
@@ -8,6 +8,9 @@ npm install
 cordova platforms add android
 
 ## Correr la aplicación localmente
-cordova emulate android Desde el emulador 
-ripple emulate Desde el emulador del browser
 
+### Desde el emulador
+<pre><code>cordova emulate android</code></pre> 
+ 
+### Desde el emulador del browser
+<pre><code>ripple emulate</code></pre>
