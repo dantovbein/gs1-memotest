@@ -2,10 +2,10 @@
 Este es repositorio del memotest para la empresa GS1
 
 ## Instalación inicial
-npm install
+<pre><code>npm install</code></pre>
 
 ## Agregar plataforma
-cordova platforms add android
+<pre><code>cordova platforms add android</code></pre>
 
 ## Correr la aplicación localmente
 
