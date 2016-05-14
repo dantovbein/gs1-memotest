@@ -1,0 +1,26 @@
+{
+  "name": "gs1-memotest",
+  "version": "1.0.0",
+  "description": "Memotest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dantovbein/gs1-memotest.git"
+  },
+  "author": "Dan Tovbein",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dantovbein/gs1-memotest/issues"
+  },
+  "homepage": "https://github.com/dantovbein/gs1-memotest#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.1"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.3.1"
+  }
+}
