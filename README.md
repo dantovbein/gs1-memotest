@@ -1,16 +1,28 @@
 # Memotest
-Este es el repositorio del memotest para la empresa GS1
+Public repository of HTML5 Cordova Memotest game
 
-## Instalación inicial
+## Getting Started
 <pre><code>npm install</code></pre>
 
-## Agregar plataforma
+### Add plataforms
 <pre><code>cordova platforms add android</code></pre>
 
-## Correr la aplicación localmente
+### Run locally the application
 
-### Desde el emulador
+#### From android native emulator
 <pre><code>cordova emulate android</code></pre> 
  
-### Desde el emulador del browser
+#### From browser
 <pre><code>ripple emulate</code></pre>
+
+### Gulp tasks
+
+#### For compile sass files
+<pre><code>gulp sass</pre></code>
+
+#### For emulate
+<pre><code>gulp emulate</pre></code>
+
+#### For release
+##### Android
+<pre><code>gulp release android</pre></code>
