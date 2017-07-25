@@ -5,8 +5,10 @@ var gulp = require('gulp'),
   concat = require('gulp-concat'),
   clean = require('gulp-clean'),
   file = require('gulp-file'),
+  shell = require('gulp-shell'),
   ripple = require('ripple-emulator'),
-  open = require('open');
+  open = require('open'),
+  minify = require('gulp-minifier');
 
 gulp.task('sass', ['clean-css'], function () {
   return gulp.src('./sass/**/*.sass')
@@ -21,7 +23,39 @@ gulp.task('clean-css', function () {
     .pipe(clean())
 });
 
-gulp.task('emulate', ['sass'], function () {
+gulp.task('bundle-js',
+  shell.task(['browserify www/js/libs.js -o www/js/bundle.js'])
+);
+
+gulp.task('minify-css', ['sass'], function() {
+  return gulp.src('./www/css/main.css').pipe(minify({
+    minify: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true,
+    minifyJS: false,
+    minifyCSS: true,
+    getKeptComment: function (content, filePath) {
+      var m = content.match(/\/\*![\s\S]*?\*\//img);
+      return m && m.join('\n') + '\n' || '';
+    }
+  })).pipe(gulp.dest('./www/css/'));
+});
+
+gulp.task('minify-js', function() {
+  return gulp.src('./www/js/bundle.js').pipe(minify({
+    minify: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true,
+    minifyJS: true,
+    minifyCSS: false,
+    getKeptComment: function (content, filePath) {
+      var m = content.match(/\/\*![\s\S]*?\*\//img);
+      return m && m.join('\n') + '\n' || '';
+    }
+  })).pipe(gulp.dest('./www/js/'));
+});
+
+gulp.task('emulate', ['bundle-js','sass'], function () {
   var options = {
     keepAlive: false,
     open: true,
